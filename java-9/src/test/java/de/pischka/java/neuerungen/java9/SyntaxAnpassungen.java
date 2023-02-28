@@ -2,7 +2,10 @@ package de.pischka.java.neuerungen.java9;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Beispiele zu Anpassungen der Syntax.
@@ -27,5 +30,15 @@ class SyntaxAnpassungenTests {
     @Test
     void privateStaticInterfaceMethodenTest() {
         assertEquals(20.0, Fahrzeug.meterProSekunde(72));
+    }
+
+    /**
+     * Try-With-Resources-Verbesserungen.
+     *
+     * @throws IOException Bei Fehler
+     */
+    @Test
+    void tryWithResourcesTest() throws IOException {
+        assertTrue(TryWithResourcesFileWriter.schreibeDatei("java9.txt", "Try-With-Resources-Verbesserungen"));
     }
 }
