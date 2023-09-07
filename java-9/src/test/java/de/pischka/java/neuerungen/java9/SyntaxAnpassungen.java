@@ -39,6 +39,8 @@ class SyntaxAnpassungenTests {
      */
     @Test
     void tryWithResourcesTest() throws IOException {
-        assertTrue(TryWithResourcesFileWriter.schreibeDatei("java9.txt", "Try-With-Resources-Verbesserungen"));
+        assertTrue(TryWithResourcesFileReaderAndWriter.schreibeDatei("java9.txt", "Try-With-Resources-Verbesserungen"));
+        assertEquals("Try-With-Resources-Verbesserungen",
+                TryWithResourcesFileReaderAndWriter.leseDatei("java9.txt"));
     }
 }
